@@ -2,150 +2,180 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>TravelSun | Executive Travel</title>
-  <!-- Google Fonts: Classy & Modern -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-  <!-- Font Awesome 6 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TravelSun | Affordable World Travel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Navigation Bar -->
-<div class="navbar">
-  <div class="container nav-flex">
+<nav class="navbar">
+  <div class="container nav-container">
     <div class="logo">TRAVELSUN</div>
-    <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#destinations">Destinations</a>
-      <a href="#booking-page">Book</a>
-      <a href="#packages">Packages</a>
-      <a href="#services">Services</a>
-      <a href="#query">Support</a>
-      <a href="tel:02081636893" class="btn-outline-gold"><i class="fas fa-phone-alt"></i> Contact</a>
-    </div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#destinations">Destinations</a></li>
+      <li><a href="#packages">Packages</a></li>
+      <li><a href="#booking">Book</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Support</a></li>
+      <li><a href="tel:02081636893" class="contact-nav">Call</a></li>
+    </ul>
   </div>
-</div>
+</nav>
 
-<!-- Hero Landing -->
+<!-- Hero Section with Blue Background Image & Large Icons Left/Right -->
 <section id="home" class="hero">
   <div class="container">
-    <div class="quote-text">Plan Your Journey</div>
-    <p>Executive travel experiences crafted with precision.</p>
+    <h1>EXPERIENCE THE WORLD ONE VOYAGE AT A TIME.</h1>
+    <p class="subhead">Let us transport you with highly affordable and reliable options.</p>
     
-    <div class="flight-search-panel">
-      <div class="airport-group">
-        <label>DEPARTURE</label>
+    <!-- Airport search panel -->
+    <div class="search-panel">
+      <div class="search-group">
+        <label><i class="fas fa-plane-departure"></i> Departure</label>
         <select id="departureAirport">
-          <option value="London Heathrow (LHR)">London Heathrow (LHR)</option>
-          <option value="London Gatwick (LGW)">London Gatwick (LGW)</option>
-          <option value="Manchester (MAN)">Manchester (MAN)</option>
-          <option value="Birmingham (BHX)">Birmingham (BHX)</option>
+          <option>London Heathrow (LHR)</option><option>London Gatwick (LGW)</option>
+          <option>Manchester (MAN)</option><option>Birmingham (BHX)</option>
         </select>
       </div>
-      <div class="airport-group">
-        <label>ARRIVAL</label>
+      <div class="search-group">
+        <label><i class="fas fa-plane-arrival"></i> Arrival</label>
         <select id="arrivalAirport">
-          <option value="Turkey (IST)">Turkey (IST)</option>
-          <option value="Spain (MAD)">Spain (MAD)</option>
-          <option value="Canada (YYZ)">Canada (YYZ)</option>
-          <option value="Malaysia (KUL)">Malaysia (KUL)</option>
-          <option value="Dubai (DXB)">Dubai (DXB)</option>
-          <option value="London (LHR)">London (LHR)</option>
+          <option>Turkey (IST)</option><option>Spain (MAD)</option><option>Canada (YYZ)</option>
+          <option>Malaysia (KUL)</option><option>Dubai (DXB)</option><option>London (LHR)</option>
         </select>
       </div>
-      <div class="hero-buttons">
-        <button class="btn-primary" id="contactUsHeroBtn">Contact Us</button>
-        <div class="status-badge" id="statusBadge">Status: Available</div>
+      <div class="action-icons">
+        <a href="tel:02081636893" class="icon-btn call-icon large-icon">
+          <i class="fas fa-phone-alt"></i>
+          <span class="pulse-ring"></span>
+        </a>
+        <a href="https://wa.me/447848146969" class="icon-btn whatsapp-icon large-icon">
+          <i class="fab fa-whatsapp"></i>
+          <span class="pulse-ring"></span>
+        </a>
       </div>
     </div>
+    <div class="status-badge" id="statusBadge">Status: Available</div>
   </div>
 </section>
 
-<!-- FEATURED DESTINATIONS -->
-<section id="destinations">
+<!-- Destinations Section (renamed from Capitals) -->
+<section id="destinations" class="capitals-section">
   <div class="container">
-    <h2 class="section-title">Featured Destinations</h2>
-    <div class="dest-grid" id="destinationsGrid"></div>
+    <h2 class="section-title">Destinations</h2>
+    <div class="capitals-grid" id="capitalsGrid"></div>
   </div>
 </section>
 
-<!-- BOOK NOW SECTION -->
-<section id="booking-page">
-  <div class="container">
-    <h2 class="section-title">Booking Portal</h2>
-    <div class="booking-form-row">
-      <div class="form-group">
-        <label>Departure Date</label>
-        <input type="date" id="bookingDate" value="2026-05-15">
-      </div>
-      <div class="form-group">
-        <label>Return Date</label>
-        <input type="date" id="returnDate" value="2026-05-22">
-      </div>
-      <div class="form-group">
-        <label>Destination</label>
-        <select id="bookDestination">
-          <option value="Turkey">Turkey</option>
-          <option value="Spain">Spain</option>
-          <option value="Canada">Canada</option>
-          <option value="Malaysia">Malaysia</option>
-          <option value="Dubai">Dubai</option>
-          <option value="London">London</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <button id="whatsappBookBtn" class="btn-primary full-width">Confirm via WhatsApp</button>
-      </div>
-    </div>
-    <div id="bookingStatusMsg" class="status-hint"></div>
-  </div>
-</section>
-
-<!-- PACKAGES -->
-<section id="packages">
+<!-- Packages Section -->
+<section id="packages" class="packages-section">
   <div class="container">
     <h2 class="section-title">Travel Packages</h2>
-    <div class="package-grid" id="packageContainer"></div>
+    <div class="packages-grid" id="packagesGrid"></div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section id="services">
+<!-- Booking Portal -->
+<section id="booking" class="booking-section">
+  <div class="container">
+    <h2 class="section-title">Booking Portal</h2>
+    <div class="booking-card">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Departure Date</label>
+          <input type="date" id="bookingDate" value="2026-06-01">
+        </div>
+        <div class="form-group">
+          <label>Return Date</label>
+          <input type="date" id="returnDate" value="2026-06-08">
+        </div>
+        <div class="form-group">
+          <label>Destination</label>
+          <select id="bookDestination">
+            <option>Turkey</option><option>Spain</option><option>Canada</option>
+            <option>Malaysia</option><option>Dubai</option><option>London</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <button id="whatsappBookBtn" class="btn-primary">Confirm via WhatsApp</button>
+        </div>
+      </div>
+      <div id="bookingStatusMsg" class="status-msg"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Services / Classes -->
+<section id="services" class="services-section">
   <div class="container">
     <h2 class="section-title">Cabin Classes</h2>
-    <div class="services-flex">
-      <div class="service-card"><i class="fas fa-crown"></i><h3>Premium</h3><p>Priority boarding · Lie-flat seats · Fine dining</p></div>
-      <div class="service-card"><i class="fas fa-champagne-glasses"></i><h3>Executive</h3><p>Lounge access · Spacious seating · Gourmet meals</p></div>
-      <div class="service-card"><i class="fas fa-briefcase"></i><h3>Business</h3><p>Fully flat beds · Private suite · Chauffeur drive</p></div>
-      <div class="service-card"><i class="fas fa-globe"></i><i class="fas fa-chair"></i><h3>Economy Plus</h3><p>Extra legroom · Priority service · Power outlets</p></div>
-    </div>
-    <div class="email-reference">
-      <i class="fas fa-envelope"></i> <a href="mailto:travelsun06@gmail.com">travelsun06@gmail.com</a>
+    <div class="services-grid">
+      <div class="service-card"><i class="fas fa-crown"></i><h3>Premium</h3><p>Priority boarding · Lie-flat seats</p></div>
+      <div class="service-card"><i class="fas fa-champagne-glasses"></i><h3>Executive</h3><p>Lounge access · Gourmet meals</p></div>
+      <div class="service-card"><i class="fas fa-briefcase"></i><h3>Business</h3><p>Fully flat beds · Private suite</p></div>
+      <div class="service-card"><i class="fas fa-chair"></i><h3>Economy Plus</h3><p>Extra legroom · Priority service</p></div>
     </div>
   </div>
 </section>
 
-<!-- QUERY SECTION -->
-<section id="query">
-  <div class="container query-section">
+<!-- About / Policies -->
+<section id="about" class="about-section">
+  <div class="container">
+    <h2 class="section-title">Learn more about Travelsun</h2>
+    <div class="policy-grid">
+      <div class="policy-card">
+        <h3>Cancellation Policy</h3>
+        <p>Free cancellation up to 14 days before departure. 50% refund between 7-14 days. No refund within 7 days.</p>
+      </div>
+      <div class="policy-card">
+        <h3>Booking Terms</h3>
+        <p>All bookings require 30% deposit. Final payment due 21 days before travel. Prices include taxes and fees.</p>
+      </div>
+      <div class="policy-card">
+        <h3>Privacy Commitment</h3>
+        <p>Your data is secure. We never share personal information with third parties without consent.</p>
+      </div>
+      <div class="policy-card">
+        <h3>Customer Support</h3>
+        <p>24/7 support via WhatsApp +447848146969 or email travelsun06@gmail.com.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Inquiry Form -->
+<section id="contact" class="contact-section">
+  <div class="container">
     <h2 class="section-title">Inquiry Form</h2>
-    <div class="query-flex">
+    <div class="contact-form">
       <input type="text" id="queryName" placeholder="Full name">
       <input type="email" id="queryEmail" placeholder="Email address">
       <input type="text" id="querySubject" placeholder="Subject">
+      <textarea id="queryMessage" rows="4" placeholder="Message"></textarea>
+      <button id="sendQueryBtn" class="btn-primary">Send Message</button>
+      <div id="queryFeedback" class="feedback-msg"></div>
     </div>
-    <textarea id="queryMessage" rows="4" placeholder="Message"></textarea>
-    <button id="sendQueryBtn" class="btn-primary">Send Message</button>
-    <div id="queryFeedback" class="query-feedback"></div>
   </div>
 </section>
+
+<!-- Sliding Airlines Logos -->
+<div class="slider-container">
+  <div class="slider-track">
+    <span>IATA</span> <span>TRAVELPORT</span> <span>SABRE</span> <span>EMIRATES</span>
+    <span>AIRBLUE</span> <span>AIRSIAL</span> <span>SERENEAIR</span>
+    <span>IATA</span> <span>TRAVELPORT</span> <span>SABRE</span> <span>EMIRATES</span>
+    <span>AIRBLUE</span> <span>AIRSIAL</span> <span>SERENEAIR</span>
+  </div>
+</div>
 
 <footer>
   <div class="container">
     <p>TRAVELSUN — 020 8163 6893 | +447848146969 | travelsun06@gmail.com</p>
-    <p class="copyright">© 2026 TravelSun. All rights reserved.</p>
+    <p class="copyright">© 2026 TravelSun. Reliable journeys, unforgettable memories.</p>
   </div>
 </footer>
 
