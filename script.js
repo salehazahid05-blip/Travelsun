@@ -1,43 +1,22 @@
-// DESTINATIONS – Only 4: Paris, London, Spain (Madrid), Rome
+// Destinations (4 cities)
 const destinations = [
-  { 
-    name: "Paris", 
-    country: "France", 
-    img: "https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg?auto=compress&cs=tinysrgb&w=800" 
-  },
-  { 
-    name: "London", 
-    country: "United Kingdom", 
-    img: "https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg?auto=compress&cs=tinysrgb&w=800" 
-  },
-  { 
-    name: "Madrid", 
-    country: "Spain", 
-    img: "https://images.pexels.com/photos/1132951/pexels-photo-1132951.jpeg?auto=compress&cs=tinysrgb&w=800" 
-  },
-  { 
-    name: "Rome", 
-    country: "Italy", 
-    img: "https://images.pexels.com/photos/1797161/pexels-photo-1797161.jpeg?auto=compress&cs=tinysrgb&w=800" 
-  }
+  { name: "Paris", country: "France", img: "https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg?auto=compress&cs=tinysrgb&w=800" },
+  { name: "London", country: "United Kingdom", img: "https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg?auto=compress&cs=tinysrgb&w=800" },
+  { name: "Madrid", country: "Spain", img: "https://images.pexels.com/photos/1132951/pexels-photo-1132951.jpeg?auto=compress&cs=tinysrgb&w=800" },
+  { name: "Rome", country: "Italy", img: "https://images.pexels.com/photos/1797161/pexels-photo-1797161.jpeg?auto=compress&cs=tinysrgb&w=800" }
 ];
 
-// Populate Destinations Grid
 const capitalsGrid = document.getElementById('capitalsGrid');
 if (capitalsGrid) {
   destinations.forEach(cap => {
     const card = document.createElement('div');
     card.className = 'capital-card';
-    card.innerHTML = `
-      <div class="capital-img" style="background-image: url(${cap.img}); background-size: cover; background-position: center;"></div>
-      <h3>${cap.name}</h3>
-      <p>${cap.country}</p>
-    `;
+    card.innerHTML = `<div class="capital-img" style="background-image: url(${cap.img}); background-size: cover; background-position: center;"></div><h3>${cap.name}</h3><p>${cap.country}</p>`;
     capitalsGrid.appendChild(card);
   });
 }
 
-// ========== PACKAGES ==========
+// Packages
 const packagesList = [
   { type: "Couple Package", icon: "fas fa-heart", desc: "Private dining, spa access, beachfront suite", price: "£1599" },
   { type: "Group Package", icon: "fas fa-user-friends", desc: "Adventure tours, nightlife access, shared transport", price: "£1099" },
@@ -49,17 +28,12 @@ if (packagesGrid) {
   packagesList.forEach(pkg => {
     const div = document.createElement('div');
     div.className = 'package-item';
-    div.innerHTML = `
-      <i class="${pkg.icon}"></i>
-      <h3>${pkg.type}</h3>
-      <p>${pkg.desc}</p>
-      <div class="price">${pkg.price}</div>
-    `;
+    div.innerHTML = `<i class="${pkg.icon}"></i><h3>${pkg.type}</h3><p>${pkg.desc}</p><div class="price">${pkg.price}</div>`;
     packagesGrid.appendChild(div);
   });
 }
 
-// ========== BOOKING & WHATSAPP ==========
+// WhatsApp booking
 const whatsappBtn = document.getElementById('whatsappBookBtn');
 const bookingDate = document.getElementById('bookingDate');
 const returnDate = document.getElementById('returnDate');
@@ -75,7 +49,7 @@ function getWhatsAppMessage() {
   const dest = bookDest ? bookDest.value : "Turkey";
   const depDate = bookingDate ? bookingDate.value : "2026-06-01";
   const retDate = returnDate ? returnDate.value : "2026-06-08";
-  return `TRAVELSUN Booking Request\nDeparture: ${dep}\nDestination: ${dest} (Arrival: ${arr})\nDeparture: ${depDate}\nReturn: ${retDate}\nPlease share package options.`;
+  return `TRAVELSUN Booking Request\nDeparture: ${dep}\nDestination: ${dest} (Arrival: ${arr})\nDeparture: ${depDate}\nReturn: ${retDate}\nPlease share package options. Call us at 02046218739 for urgent queries.`;
 }
 
 if (whatsappBtn) {
@@ -88,7 +62,7 @@ if (whatsappBtn) {
   });
 }
 
-// ========== CONTACT FORM ==========
+// Inquiry form - email updated to travelsun37@gmail.com
 const sendQuery = document.getElementById('sendQueryBtn');
 const qName = document.getElementById('queryName');
 const qEmail = document.getElementById('queryEmail');
@@ -104,7 +78,7 @@ if (sendQuery) {
       return;
     }
     const body = `Name: ${qName.value}%0AEmail: ${qEmail.value}%0A%0AMessage:%0A${qMessage.value}`;
-    const mailto = `mailto:travelsun06@gmail.com?subject=${encodeURIComponent(qSubject.value || 'Travel Inquiry')}&body=${body}`;
+    const mailto = `mailto:travelsun37@gmail.com?subject=${encodeURIComponent(qSubject.value || 'Travel Inquiry')}&body=${body}`;
     window.location.href = mailto;
     qFeedback.innerText = 'Email client opened. Please send the message.';
     qFeedback.style.color = '#0057a3';
@@ -112,11 +86,11 @@ if (sendQuery) {
   });
 }
 
-// ========== DATE VALIDATION ==========
+// Date validation
 if (returnDate && bookingDate) {
   bookingDate.addEventListener('change', () => {
     if (returnDate.value < bookingDate.value) returnDate.value = bookingDate.value;
   });
 }
 
-console.log('TravelSun – 4 destinations: Paris, London, Madrid, Rome');
+console.log('TravelSun website ready – email updated to travelsun37@gmail.com');

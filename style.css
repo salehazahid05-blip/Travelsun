@@ -32,11 +32,35 @@ body {
   align-items: center;
   flex-wrap: wrap;
 }
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
 .logo {
   font-size: 1.8rem;
   font-weight: 700;
   color: #0057a3;
   letter-spacing: -0.5px;
+}
+.logo-phone {
+  font-size: 0.95rem;
+  font-weight: 500;
+  background: #f4a10020;
+  padding: 6px 14px;
+  border-radius: 40px;
+  text-decoration: none;
+  color: #0057a3;
+  border: 1px solid #f4a100;
+  transition: 0.2s;
+}
+.logo-phone i {
+  margin-right: 6px;
+}
+.logo-phone:hover {
+  background: #f4a100;
+  color: white;
 }
 .nav-links {
   display: flex;
@@ -61,7 +85,7 @@ body {
   border-radius: 30px;
 }
 
-/* ========= HERO - Blue background image with overlay ========= */
+/* Hero */
 .hero {
   padding: 110px 0 130px;
   background: linear-gradient(rgba(0, 70, 120, 0.65), rgba(0, 40, 70, 0.8)), 
@@ -77,7 +101,6 @@ body {
   font-weight: 900;
   text-transform: uppercase;
   background: none;
-  -webkit-background-clip: unset;
   color: white;
   text-shadow: 0 2px 15px rgba(0,0,0,0.4);
   margin-bottom: 20px;
@@ -130,7 +153,7 @@ body {
   cursor: pointer;
 }
 
-/* Action icons - LARGE, left and right */
+/* Action icons */
 .action-icons {
   display: flex;
   gap: 35px;
@@ -195,6 +218,43 @@ body {
   font-weight: 500;
 }
 
+/* Sliding contact - now fully clickable */
+.sliding-contact-link {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 30px;
+}
+.sliding-contact {
+  overflow: hidden;
+  white-space: nowrap;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(4px);
+  padding: 12px 0;
+  border-radius: 60px;
+  width: 100%;
+  border: 1px solid rgba(255,215,0,0.3);
+  transition: 0.2s;
+  cursor: pointer;
+}
+.sliding-contact-link:hover .sliding-contact {
+  background: rgba(0,0,0,0.7);
+}
+.sliding-text {
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffd700;
+  letter-spacing: 1px;
+  animation: slidePhone 18s linear infinite;
+  padding-right: 50px;
+}
+@keyframes slidePhone {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
 /* Responsive */
 @media (max-width: 860px) {
   .hero h1 { font-size: 2.3rem; }
@@ -202,9 +262,10 @@ body {
   .search-panel { flex-direction: column; border-radius: 40px; align-items: stretch; }
   .action-icons { justify-content: center; gap: 30px; min-width: auto; }
   .large-icon { width: 65px; height: 65px; font-size: 1.9rem; }
+  .sliding-text { font-size: 1.1rem; }
 }
 
-/* ========= REST OF STYLES (unchanged) ========= */
+/* Sections */
 .capitals-section, .packages-section, .booking-section, .services-section, .about-section, .contact-section {
   padding: 80px 0;
   border-bottom: 1px solid #eef2f6;
@@ -225,6 +286,8 @@ body {
   display: block;
   margin: 16px auto 0;
 }
+
+/* Destinations grid */
 .capitals-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -257,6 +320,8 @@ body {
   color: #4a627a;
   font-size: 0.9rem;
 }
+
+/* Packages */
 .packages-grid {
   display: flex;
   flex-wrap: wrap;
@@ -295,6 +360,8 @@ body {
   color: #5a6e85;
   font-size: 0.9rem;
 }
+
+/* Booking form */
 .booking-card {
   background: white;
   border-radius: 28px;
@@ -348,6 +415,8 @@ input, select, textarea {
   font-size: 0.85rem;
   color: #4a627a;
 }
+
+/* Services */
 .services-grid {
   display: flex;
   flex-wrap: wrap;
@@ -375,6 +444,8 @@ input, select, textarea {
   font-size: 0.85rem;
   color: #5a6e85;
 }
+
+/* Policies */
 .policy-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -396,6 +467,8 @@ input, select, textarea {
   font-size: 0.9rem;
   line-height: 1.4;
 }
+
+/* Contact form */
 .contact-form {
   max-width: 700px;
   margin: 0 auto;
@@ -414,6 +487,8 @@ input, select, textarea {
   font-size: 0.85rem;
   color: #f4a100;
 }
+
+/* Sliding logos */
 .slider-container {
   overflow: hidden;
   white-space: nowrap;
@@ -439,6 +514,8 @@ input, select, textarea {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+
+/* Footer */
 footer {
   background: #1e2a3e;
   color: #b0c4de;
